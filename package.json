@@ -1,0 +1,31 @@
+{
+  "name": "ora-nova",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ora Nova — Turismo Dental en República Dominicana",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "motion": "^12.7.4",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.2.0",
+    "class-variance-authority": "^0.7.1",
+    "lucide-react": "^0.487.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "typescript": "^5.8.3",
+    "tailwindcss": "^4.1.4",
+    "@tailwindcss/postcss": "^4.1.4",
+    "@tailwindcss/typography": "^0.5.16"
+  }
+}
