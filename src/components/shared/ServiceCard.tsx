@@ -14,7 +14,7 @@ export interface ServiceCardProps {
 }
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  tooth: LucideIcons.Tooth,
+  tooth: LucideIcons.Smile,
   sparkles: LucideIcons.Sparkles,
   scan: LucideIcons.Scan,
   gem: LucideIcons.Gem,
@@ -25,7 +25,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 }
 
 export function ServiceCard({ service, featured = false }: ServiceCardProps) {
-  const IconComponent = iconMap[service.icon] || LucideIcons.Tooth
+  const IconComponent = iconMap[service.icon] || LucideIcons.Smile
 
   return (
     <motion.div

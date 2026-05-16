@@ -48,9 +48,9 @@ export function PriceTable({ data, highlight = "RD" }: PriceTableProps) {
                 {treatmentLabels[key]}
               </td>
               {data.map((country) => {
-                const price = country[key] as number
+                const price = Number(country[key as keyof CountryPrice])
                 const isHighlight = country.code === highlight
-                const isLowest = price === Math.min(...data.map((c) => c[key] as number))
+                const isLowest = price === Math.min(...data.map((c) => Number(c[key as keyof CountryPrice])))
 
                 return (
                   <td

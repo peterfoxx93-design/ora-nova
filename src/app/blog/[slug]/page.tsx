@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
 
-      <PriceComparison highlight="RD" />
+      <PriceComparison />
       <CTASection />
     </>
   )

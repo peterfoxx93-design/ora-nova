@@ -39,7 +39,7 @@ export default function ComparativaPage() {
         subtitle="Un implante dental en RD cuesta desde $1,195 USD. En EE.UU., $4,500 USD. Ahorra hasta 78%."
       />
 
-      <PriceComparison highlight="RD" />
+      <PriceComparison />
 
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4">

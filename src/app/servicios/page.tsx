@@ -32,7 +32,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      <PriceComparison highlight="RD" />
+      <PriceComparison />
 
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4">
