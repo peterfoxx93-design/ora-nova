@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import { services } from "@/data/services"
 import { faq } from "@/data/testimonials"
 import { FAQs } from "@/components/shared/FAQs"
