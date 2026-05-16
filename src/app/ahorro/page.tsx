@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Hero } from "@/components/shared/Hero"
+import { PageHero } from "@/components/shared/PageHero"
 import { SavingsCalculator } from "@/components/calculator/SavingsCalculator"
 import { CTASection } from "@/components/shared/CTASection"
 
@@ -12,10 +12,9 @@ export const metadata: Metadata = {
 export default function AhorroPage() {
   return (
     <>
-      <Hero
+      <PageHero
         title="¿Cuánto Puedes Ahorrar?"
         subtitle="Calcula tu ahorro real con precios transparentes. Selecciona tu origen y tratamiento."
-        size="small"
       />
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4">

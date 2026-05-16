@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Hero } from "@/components/shared/Hero"
+import { PageHero } from "@/components/shared/PageHero"
 import { CTASection } from "@/components/shared/CTASection"
 import { team } from "@/data/team"
 import { Award, Heart, Shield, Users } from "lucide-react"
@@ -11,45 +11,25 @@ export const metadata: Metadata = {
 }
 
 const values = [
-  {
-    icon: Award,
-    title: "Excelencia Clínica",
-    description: "Estándares internacionales con los mejores materiales y tecnología de punta.",
-  },
-  {
-    icon: Heart,
-    title: "Atención Personalizada",
-    description: "Cada paciente es único. Diseñamos tu plan de tratamiento a tu medida.",
-  },
-  {
-    icon: Shield,
-    title: "Transparencia Total",
-    description: "Precios claros, sin sorpresas. Te explicamos cada paso del proceso.",
-  },
-  {
-    icon: Users,
-    title: "Equipo Multidisciplinario",
-    description: "Especialistas coordinados para brindarte el mejor resultado posible.",
-  },
+  { icon: Award, title: "Excelencia Clínica", description: "Estándares internacionales con los mejores materiales y tecnología de punta." },
+  { icon: Heart, title: "Atención Personalizada", description: "Cada paciente es único. Diseñamos tu plan de tratamiento a tu medida." },
+  { icon: Shield, title: "Transparencia Total", description: "Precios claros, sin sorpresas. Te explicamos cada paso del proceso." },
+  { icon: Users, title: "Equipo Multidisciplinario", description: "Especialistas coordinados para brindarte el mejor resultado posible." },
 ]
 
 export default function NosotrosPage() {
   return (
     <>
-      <Hero
+      <PageHero
         title="Conoce a Nuestro Equipo"
         subtitle="Profesionales apasionados por transformar sonrisas con excelencia y calidez."
-        size="small"
       />
 
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-10 md:grid-cols-2">
             {team.map((member) => (
-              <div
-                key={member.name}
-                className="flex flex-col sm:flex-row gap-6 rounded-2xl border border-[#E5E3DC] bg-white p-6 shadow-sm"
-              >
+              <div key={member.name} className="flex flex-col sm:flex-row gap-6 rounded-2xl border border-[#E5E3DC] bg-white p-6 shadow-sm">
                 <div className="flex-shrink-0">
                   <div className="h-24 w-24 rounded-full bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-3xl font-bold text-white mx-auto sm:mx-0">
                     {member.name.charAt(0)}
@@ -60,12 +40,7 @@ export default function NosotrosPage() {
                   <p className="text-accent font-medium">{member.title}</p>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {member.specialties.map((s) => (
-                      <span
-                        key={s}
-                        className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent"
-                      >
-                        {s}
-                      </span>
+                      <span key={s} className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">{s}</span>
                     ))}
                   </div>
                   <p className="mt-2 text-sm text-gray-400">{member.education}</p>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Hero } from "@/components/shared/Hero"
+import { PageHero } from "@/components/shared/PageHero"
 import { BookingFlow } from "@/components/booking/BookingFlow"
 
 export const metadata: Metadata = {
@@ -11,10 +11,9 @@ export const metadata: Metadata = {
 export default function ReservaPage() {
   return (
     <>
-      <Hero
+      <PageHero
         title="Reserva Tu Cita"
         subtitle="Agenda tu evaluación gratuita en 4 pasos. Sin compromiso."
-        size="small"
       />
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4">

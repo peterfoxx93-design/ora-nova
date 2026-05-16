@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
-import { Hero } from "@/components/shared/Hero"
+import Link from "next/link"
+import { PageHero } from "@/components/shared/PageHero"
 import { ServiceCard } from "@/components/shared/ServiceCard"
-import { PriceComparison } from "@/components/shared/PriceComparison"
+import { PriceComparison } from "@/components/sections/PriceComparison"
 import { FAQs } from "@/components/shared/FAQs"
 import { CTASection } from "@/components/shared/CTASection"
 import { services } from "@/data/services"
-import { serviceCategories } from "@/data/services"
+import { ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Servicios Dentales",
@@ -16,10 +17,9 @@ export const metadata: Metadata = {
 export default function ServiciosPage() {
   return (
     <>
-      <Hero
+      <PageHero
         title="Servicios Dentales"
         subtitle="Odontología integral con tecnología de punta y los mejores materiales del mundo. Todos nuestros precios son transparentes."
-        size="small"
       />
 
       <section className="py-16 md:py-24">
@@ -41,6 +41,14 @@ export default function ServiciosPage() {
           </h2>
           <div className="max-w-3xl mx-auto">
             <FAQs filter="treatment" />
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/reserva"
+              className="gradient-cta text-primary inline-flex h-[44px] items-center justify-center rounded-full px-8 font-semibold shadow-lg transition-all hover:scale-105"
+            >
+              Agenda tu Cita <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

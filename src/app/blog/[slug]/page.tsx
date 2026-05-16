@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { blogPosts } from "@/data/blog-posts"
-import { PriceComparison } from "@/components/shared/PriceComparison"
+import { PriceComparison } from "@/components/sections/PriceComparison"
 import { CTASection } from "@/components/shared/CTASection"
 import { ChevronRight, CalendarDays, Clock } from "lucide-react"
 
@@ -18,10 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = blogPosts.find((p) => p.slug === slug)
   if (!post) return { title: "Artículo no encontrado" }
-  return {
-    title: post.title,
-    description: post.description,
-  }
+  return { title: post.title, description: post.description }
 }
 
 export default async function BlogPostPage({ params }: Props) {

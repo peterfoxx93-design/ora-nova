@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { Hero } from "@/components/shared/Hero"
-import { PriceComparison } from "@/components/shared/PriceComparison"
+import { PageHero } from "@/components/shared/PageHero"
+import { PriceComparison } from "@/components/sections/PriceComparison"
 import { CTASection } from "@/components/shared/CTASection"
 import { countryPrices, rdAdvantages } from "@/data/prices"
 import { MapPin, ShieldCheck, Umbrella, Award } from "lucide-react"
@@ -20,7 +20,6 @@ const advantageIcons: Record<string, React.ComponentType<{ className?: string }>
 
 export default function ComparativaPage() {
   const countries = countryPrices
-  const usPrice = countries.find((c) => c.code === "US")
   const rdPrice = countries.find((c) => c.code === "RD")
 
   const chartData = countries.map((c) => ({
@@ -34,10 +33,9 @@ export default function ComparativaPage() {
 
   return (
     <>
-      <Hero
+      <PageHero
         title="RD vs el Mundo: Precios 2026"
-        subtitle={`Un implante dental en RD cuesta desde $1,195 USD. En EE.UU., $4,500 USD. Ahorra hasta 78%.`}
-        size="small"
+        subtitle="Un implante dental en RD cuesta desde $1,195 USD. En EE.UU., $4,500 USD. Ahorra hasta 78%."
       />
 
       <PriceComparison highlight="RD" />

@@ -1,57 +1,28 @@
-"use client"
-
 import type { Metadata } from "next"
 import Link from "next/link"
-import { useState } from "react"
-import { Hero } from "@/components/shared/Hero"
+import { PageHero } from "@/components/shared/PageHero"
 import { blogPosts, blogCategories } from "@/data/blog-posts"
-import { cn } from "@/lib/utils"
-import { CalendarDays, Clock, ArrowRight } from "lucide-react"
+import { CalendarDays, Clock } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Blog & Recursos",
+  description:
+    "Guías, comparativas y todo lo que necesitas saber sobre turismo dental en República Dominicana. Precios, tratamientos y consejos.",
+}
 
 export default function BlogPage() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null)
-
-  const filtered = activeCategory
-    ? blogPosts.filter((p) => p.category === activeCategory)
-    : blogPosts
-
-  const featured = filtered.filter((p) => p.featured)
-  const regular = filtered.filter((p) => !p.featured)
+  const featured = blogPosts.filter((p) => p.featured)
+  const regular = blogPosts.filter((p) => !p.featured)
 
   return (
     <>
-      <Hero title="Blog & Recursos" subtitle="Guías, comparativas y todo lo que necesitas saber sobre turismo dental en RD." size="small" />
+      <PageHero
+        title="Blog & Recursos"
+        subtitle="Guías, comparativas y todo lo que necesitas saber sobre turismo dental en RD."
+      />
 
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="flex flex-wrap gap-2 mb-10">
-            <button
-              onClick={() => setActiveCategory(null)}
-              className={cn(
-                "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                activeCategory === null
-                  ? "bg-primary text-white"
-                  : "bg-[#E5E3DC] text-gray-600 hover:bg-accent/20",
-              )}
-            >
-              Todos
-            </button>
-            {blogCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={cn(
-                  "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                  activeCategory === cat
-                    ? "bg-primary text-white"
-                    : "bg-[#E5E3DC] text-gray-600 hover:bg-accent/20",
-                )}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
           {featured.length > 0 && (
             <div className="grid gap-6 md:grid-cols-2 mb-10">
               {featured.map((post) => (
@@ -61,7 +32,9 @@ export default function BlogPage() {
                   className="group rounded-2xl border border-[#E5E3DC] bg-white overflow-hidden shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="h-48 bg-gradient-to-br from-primary-light to-primary flex items-center justify-center">
-                    <span className="text-4xl">{post.category === "Turismo Dental" ? "\u{1F30D}" : post.category === "Comparativas" ? "\u{1F4CA}" : post.category === "Estética" ? "\u2728" : post.category === "Implantes" ? "\u{1F9B7}" : "\u{1F4AD}"}</span>
+                    <span className="text-4xl">
+                      {post.category === "Turismo Dental" ? "🌍" : post.category === "Comparativas" ? "📊" : post.category === "Estética" ? "✨" : post.category === "Implantes" ? "🦷" : "💭"}
+                    </span>
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-4 text-xs text-gray-400 mb-2">
@@ -87,7 +60,9 @@ export default function BlogPage() {
                 className="group rounded-2xl border border-[#E5E3DC] bg-white overflow-hidden shadow-sm hover:shadow-md transition-all"
               >
                 <div className="h-40 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
-                  <span className="text-3xl">{post.category === "Estética" ? "\u2728" : post.category === "Implantes" ? "\u{1F9B7}" : "\u{1F4D6}"}</span>
+                  <span className="text-3xl">
+                    {post.category === "Estética" ? "✨" : post.category === "Implantes" ? "🦷" : "📖"}
+                  </span>
                 </div>
                 <div className="p-4">
                   <div className="flex items-center gap-3 text-xs text-gray-400 mb-2">
