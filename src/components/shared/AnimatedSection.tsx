@@ -1,8 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { motion } from "motion"
-import { useInView } from "motion"
+import { motion, useInView } from "motion/react"
 import { cn } from "@/lib/utils"
 
 export interface AnimatedSectionProps {
